@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone Number Input with Country Code</title>
+    <!-- intl-tel-input CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        label {
+            font-size: 18px;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+        .intl-tel-input {
+            width: 100%;
+            max-width: 400px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Enter Your Phone Number</h1>
+    <label for="phone-number">Phone Number:</label>
+    <input id="phone-number" type="tel" placeholder="Enter phone number">
+
+    <!-- intl-tel-input JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const input = document.querySelector("#phone-number");
+
+            // Initialize intl-tel-input
+            const iti = window.intlTelInput(input, {
+                initialCountry: "auto", // Automatically detect the user's country
+                geoIpLookup: function(callback) {
+                    fetch("https://ipinfo.io/json?token=YOUR_API_KEY")
+                        .then(response => response.json())
+                        .then(data => callback(data.country))
+                        .catch(() => callback("us"));
+                },
+                separateDialCode: true,
+                preferredCountries: ["us", "gb", "ca"], // Example: preferred countries
+                utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.min.js" // Required for formatting/validation
+            });
+
+            // Example of updating placeholder with the selected country code
+            input.addEventListener('countrychange', function() {
+                const countryData = iti.getSelectedCountryData();
+                input.setAttribute('placeholder', `Phone number (${countryData.dialCode})`);
+            });
+
+            // Set initial placeholder
+            const countryData = iti.getSelectedCountryData();
+            input.setAttribute('placeholder', `Phone number (${countryData.dialCode})`);
+        });
+    </script>
+</body>
+</html>

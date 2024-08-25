@@ -1,0 +1,41 @@
+/* fade up  */
+/* note: use this class animation for fade up scroll effect  */
+.animation {
+  transform: translateY(40px);
+  opacity: 0;
+  transition: opacity 0.2s, transform 1.5s;
+}
+.inview {
+  transform: translateY(0px);
+  opacity: 1;
+}
+
+/* fade left  */
+/* note: use this class fade-left for left scroll effect  */
+.fade-left {
+  transform: translateX(-40px);
+  opacity: 0;
+  transition: opacity 0.2s, transform 1s;
+}
+.fade-left-view {
+  opacity: 1;
+  transform: translateX(0px);
+}
+/* fade right  */
+/* note: use this class fade-right for scroll effect right  */
+.fade-right {
+  transform: translateX(40px);
+  opacity: 0;
+  transition: opacity 0.2s, transform 1s;
+}
+.fade-right-view {
+  transform: translateX(0px);
+  opacity: 1;
+}
+/* fade zoome  */
+/* note: use this class fade-zoom for scroll effect zoom in  */
+.fade-zoom-view {
+  opacity: 1;
+  transform: scale(1.2);
+  transition: all 1s ease-in;
+}

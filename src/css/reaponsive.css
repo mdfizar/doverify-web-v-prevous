@@ -1,0 +1,122 @@
+/* exta smal screen  */
+@media (min-width: 100px) and (max-width: 430px) {
+  /* begin golobal */
+  .section-heading  {
+    font-size: 35px;
+  }
+  .section-title {
+    font-size: 25px;
+  }
+  .center-text {
+    text-align: center;
+  }
+.margin-auto {
+  margin: auto;
+}
+  /* end golobal */
+  /* header  */
+  .header-container {
+    top: 0px;
+    border-radius: 0px;
+  }
+  .Dropdown-item {
+    top: 50px;
+  }
+  /* bannar  */
+  .bannarslider .bannar-title-container> div {
+    padding: 1rem;
+    padding-top: 0px;
+  }
+  .bannarslider .bannar-title-container h3 {
+    font-size: 36px;
+    line-height: normal;
+  }
+  .bannarslider .bannar-title-container p {
+    margin: 0px;
+  }
+  .bannarslider .bannar-title-container .oder-btn{
+    display: flex;
+    width: fit-content;
+    margin: 0px auto;
+  }
+  /* .swiper-container::before {
+    left: 125px;
+    top: -16%;
+    width: 180px;
+    height: 180px;
+  }
+  .slide-item{
+    width: 100px;
+  }
+  .swiper-container .swiper-button-prev {
+    left: 0px !important;
+  }
+  .swiper-container .swiper-button-next {
+    right: 0px !important;
+  } */
+  /* end bannar  */
+  .anticounterfeit-prosess .right  {
+    border-left: 0px;
+  }
+  .scanner {
+    width: 140px;
+    height: 100%;
+  }
+  .copy-scanner {
+    width: 140px;
+    height: 100%;
+  }
+  #overview {
+    margin-top: 0px;
+  }
+  .features .swiper-pagination{
+    bottom: 0px;
+  }
+  /* begin footer  */
+    .footer-content-alignment, .footer-content-alignment p,
+    .sm-text-center {
+      text-align: center;
+    }
+    .footer-item, .download-nfc-app {
+      justify-content: center;
+    }
+    .payment-get>div {
+      flex-wrap: wrap;
+      margin-top: 3rem;
+    }
+  /* end footer  */
+}
+/* mobaile  */
+@media (min-width: 431px) and (max-width: 766px) {
+    .swiper-container::before {
+      content: '';
+      position: absolute;
+      left: 31%;
+      height: 205px;
+      width: 205px;
+    }
+    .slide-item {
+      width: 100px;
+    }
+    .swiper-button-prev {
+      left: -5px !important;
+    }
+    .swiper-button-next {
+      right: -5px !important;
+    }
+    #overview {
+      margin-top: 0px;
+    }
+}
+/* tablate  */
+@media (min-width: 766px) and (max-width: 991px) {
+  .swiper-container::before {
+    left: 36%;
+  }
+}
+/* desktop */
+@media (min-width: 992px)  {
+  main{
+    padding-top: 76px;
+  }
+}
